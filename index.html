@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Site</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-row">
+      <a class="logo" href="#">MySite</a>
+
+      <button class="menu-btn" id="menuBtn" aria-label="Menyuni ochish/yopish">
+        ☰
+      </button>
+
+      <nav class="nav" id="nav">
+        <a href="#home">Bosh sahifa</a>
+        <a href="#about">Biz haqimizda</a>
+        <a href="#services">Xizmatlar</a>
+        <a href="#contact">Aloqa</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" id="services">
+  <div class="container">
+    <h2>Xizmatlar</h2>
+
+    <div class="cards">
+      <!-- 1-xizmat -->
+      <button class="card card-btn" id="openProducts">
+        <h3>Arzon Xitoy mahsulotlari</h3>
+        <p>Mahsulotlar ro‘yxatini ko‘rish (qidirish + sahifalar).</p>
+      </button>
+
+      <!-- 2-xizmat -->
+      <div class="card">
+        <h3>Yetkazib berish</h3>
+        <p>Keyin qo‘shamiz.</p>
+      </div>
+
+      <!-- 3-xizmat -->
+      <div class="card">
+        <h3>Kafolat / Aloqa</h3>
+        <p>Keyin qo‘shamiz.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <section class="section" id="about">
+      <div class="container">
+        <h2>Biz haqimizda</h2>
+        <p>Bu bo‘limga keyin o‘zing xohlagan matnlarni qo‘shamiz.</p>
+      </div>
+    </section>
+
+   
+
+    <section class="section" id="contact">
+      <div class="container">
+        <h2>Aloqa</h2>
+        <form class="form" id="contactForm">
+          <input type="text" placeholder="Ism" required />
+          <input type="email" placeholder="Email" required />
+          <textarea rows="4" placeholder="Xabar..." required></textarea>
+          <button class="btn primary" type="submit">Yuborish</button>
+          <p class="hint" id="hint"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <small>© 2026 MySite</small>
+    </div>
+  </footer>
+
+  <!-- PRODUCTS MODAL -->
+<div class="modal" id="productsModal" aria-hidden="true">
+  <div class="modal-backdrop" id="closeProducts"></div>
+
+  <div class="modal-card" role="dialog" aria-modal="true">
+    <div class="modal-head">
+      <h3>Mahsulotlar</h3>
+      <button class="icon-btn" id="xClose" aria-label="Yopish">✕</button>
+    </div>
+
+    <div class="modal-tools">
+      <div class="search">
+        <span class="search-icon">🔍</span>
+        <input id="searchInput" type="text" placeholder="Qidirish: nom yoki narx..." />
+      </div>
+    </div>
+
+    <div class="products" id="productsGrid">
+      <!-- ✅ MAHSULOTLARNI SHU YERDAN HTML'DA QO‘SHASAN -->
+      <!-- PAGE 1 (1-10) -->
+      <article class="product" data-name="USB kabel" data-price="15000">
+        <img src="data:image/jpeg;base64,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" alt="USB kabel">
+        <div class="p-info">
+          <div class="p-name">USB kabel</div>
+          <div class="p-price">90 000 so‘m</div>
+        </div>
+      </article>
+
+      <article class="product" data-name="Quvvatlagich" data-price="35000">
+        <img src="https://via.placeholder.com/300x200.png?text=Quvvatlagich" alt="Quvvatlagich">
+        <div class="p-info">
+          <div class="p-name">Quvvatlagich</div>
+          <div class="p-price">35 000 so‘m</div>
+        </div>
+      </article>
+
+      <!-- Qolgan 8 tasini ham shu formatda qo‘shib to‘ldirasan (PAGE 1) -->
+
+      <!-- PAGE 2 (11-20) -->
+      <article class="product" data-name="Naushnik" data-price="65000">
+        <img src="https://via.placeholder.com/300x200.png?text=Naushnik" alt="Naushnik">
+        <div class="p-info">
+          <div class="p-name">Naushnik</div>
+          <div class="p-price">65 000 so‘m</div>
+        </div>
+      </article>
+
+      <!-- Qolganlarini ham qo‘shib to‘ldirasan (PAGE 2) -->
+    </div>
+
+    <div class="pager">
+      <button class="btn" id="prevPage">⬅ Oldingi</button>
+      <div class="page-info" id="pageInfo">1 / 2</div>
+      <button class="btn" id="nextPage">Keyingi ➡</button>
+    </div>
+  </div>
+</div>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
