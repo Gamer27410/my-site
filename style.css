@@ -1,20 +1,23 @@
 :root{
   --bg: #0b1220;
-  --card: #111a2e;
+  --panel: #0f1930;
+  --card: rgba(255,255,255,0.05);
+  --line: rgba(255,255,255,0.12);
   --text: #e9eefc;
   --muted: #b9c3df;
-  --line: rgba(255,255,255,0.12);
   --accent: #5eead4;
 }
 
 *{ box-sizing: border-box; }
+html, body{ height: 100%; }
 body{
   margin: 0;
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  background: radial-gradient(900px 500px at 20% 10%, rgba(94,234,212,0.18), transparent),
-              radial-gradient(900px 500px at 80% 20%, rgba(99,102,241,0.18), transparent),
-              var(--bg);
   color: var(--text);
+  background:
+    radial-gradient(900px 500px at 20% 10%, rgba(94,234,212,0.18), transparent),
+    radial-gradient(900px 500px at 80% 20%, rgba(99,102,241,0.18), transparent),
+    var(--bg);
 }
 
 a{ color: inherit; text-decoration: none; }
@@ -23,38 +26,39 @@ a{ color: inherit; text-decoration: none; }
 .site-header{
   position: sticky;
   top: 0;
-  background: rgba(11,18,32,0.75);
-  background-attachment: fixed;
-  border-bottom: 1px solid var(--line);
   z-index: 10;
+  background: rgba(11,18,32,0.75);
+  -webkit-backdrop-filter: blur(10px);
+backdrop-filter: blur(10px);
+
+  border-bottom: 1px solid var(--line);
 }
 
 .header-row{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 14px 0;
   gap: 12px;
+  padding: 14px 0;
 }
 
-.logo{
-  font-weight: 800;
-  letter-spacing: 0.5px;
-}
+.logo{ font-weight: 800; letter-spacing: 0.5px; }
 
 .nav{
   display: flex;
-  gap: 18px;
   align-items: center;
+  gap: 18px;
 }
-
 .nav a{
   color: var(--muted);
   padding: 8px 10px;
   border-radius: 10px;
   transition: 0.2s;
 }
-.nav a:hover{ background: rgba(255,255,255,0.08); color: var(--text); }
+.nav a:hover{
+  background: rgba(255,255,255,0.08);
+  color: var(--text);
+}
 
 .menu-btn{
   display: none;
@@ -66,16 +70,13 @@ a{ color: inherit; text-decoration: none; }
   cursor: pointer;
 }
 
-.hero{
-  padding: 60px 0 28px;
-}
+.hero{ padding: 60px 0 28px; }
 .hero-grid{
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
   gap: 18px;
   align-items: start;
 }
-
 h1{
   margin: 0 0 12px;
   font-size: clamp(28px, 4vw, 44px);
@@ -107,7 +108,7 @@ p{ color: var(--muted); line-height: 1.6; }
 }
 
 .hero-card{
-  background: rgba(255,255,255,0.04);
+  background: var(--card);
   border: 1px solid var(--line);
   border-radius: 16px;
   padding: 16px;
@@ -123,64 +124,20 @@ p{ color: var(--muted); line-height: 1.6; }
   margin-top: 12px;
 }
 .card{
-  background: rgba(255,255,255,0.04);
+  background: var(--card);
   border: 1px solid var(--line);
   border-radius: 16px;
   padding: 14px;
 }
-
-.form{
-  display: grid;
-  gap: 10px;
-  max-width: 520px;
-}
-input, textarea{
-  width: 100%;
-  padding: 12px 12px;
-  border-radius: 12px;
-  border: 1px solid var(--line);
-  background: rgba(255,255,255,0.03);
-  color: var(--text);
-  outline: none;
-}
-.hint{ margin: 0; min-height: 18px; font-size: 14px; color: var(--accent); }
-
-.footer{
-  border-top: 1px solid var(--line);
-  padding: 18px 0;
-  color: var(--muted);
-}
-
-/* 📱 Telefon uchun */
-@media (max-width: 820px){
-  .hero-grid{ grid-template-columns: 1fr; }
-  .cards{ grid-template-columns: 1fr; }
-
-  .menu-btn{ display: inline-flex; }
-
-  .nav{
-    display: none;
-    position: absolute;
-    right: 4%;
-    top: 58px;
-    flex-direction: column;
-    width: min(240px, 92vw);
-    padding: 10px;
-    border-radius: 14px;
-    border: 1px solid var(--line);
-    background: rgba(11,18,32,0.95);
-  }
-
-  .nav.open{ display: flex; }
-  .nav a{ width: 100%; }
-}
 .card-btn{
   text-align: left;
   cursor: pointer;
-  background: rgba(255,255,255,0.04);
 }
-.card-btn:hover{ border-color: rgba(94,234,212,0.35); }
+.card-btn:hover{
+  border-color: rgba(94,234,212,0.35);
+}
 
+/* ===== MODAL ===== */
 .modal{
   position: fixed;
   inset: 0;
@@ -197,16 +154,18 @@ input, textarea{
 
 .modal-card{
   position: relative;
-  width: min(980px, 94vw);
+  width: min(1100px, 96vw);
   max-height: 86vh;
-  overflow: hidden;
   margin: 6vh auto;
   border-radius: 18px;
   border: 1px solid var(--line);
   background: rgba(11,18,32,0.96);
-  
+  -webkit-backdrop-filter: blur(10px);
+backdrop-filter: blur(10px);
+
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .modal-head{
@@ -240,14 +199,16 @@ input, textarea{
   padding: 10px 12px;
   border-radius: 14px;
 }
-.search-icon{ opacity: 0.85; }
 .search input{
   border: 0;
   background: transparent;
   padding: 0;
   width: 100%;
+  color: var(--text);
+  outline: none;
 }
 
+/* ===== PRODUCTS GRID (100% name+price ko‘rinadi) ===== */
 .products{
   padding: 14px;
   overflow: auto;
@@ -256,27 +217,46 @@ input, textarea{
   gap: 12px;
 }
 
+/* ✅ MUHIM: karta ichida rasm va info ajralib turadi */
 .product{
+  display: flex;
+  flex-direction: column;
   border: 1px solid var(--line);
   border-radius: 16px;
   overflow: hidden;
-  background: rgba(255,255,255,0.04);
+  background: rgba(255,255,255,0.05);
+  min-height: 210px;           /* ✅ info ko‘rinishi uchun joy */
 }
+
+/* ✅ rasm balandligi cheklangan, info pastda qoladi */
 .product img{
   width: 100%;
-  height: 120px;
+  height: 130px;               /* xohlasang 110/150 qil */
   object-fit: cover;
   display: block;
+  flex: 0 0 auto;
 }
+
+/* ✅ nom/narx doim ko‘rinadi */
 .p-info{
   padding: 10px 10px 12px;
   border-top: 1px solid rgba(255,255,255,0.12);
-  background: rgba(0,0,0,0.15);
+  background: rgba(0,0,0,0.18);
+  flex: 0 0 auto;
 }
-.p-name{ font-weight: 700; }
-.p-price{ margin-top: 6px; }
+.p-name{
+  font-weight: 800;
+  font-size: 14.5px;
+  line-height: 1.2;
+}
+.p-price{
+  margin-top: 6px;
+  color: var(--accent);
+  font-weight: 800;
+  font-size: 14px;
+}
 
-
+/* ===== PAGER ===== */
 .pager{
   display: flex;
   align-items: center;
@@ -287,10 +267,35 @@ input, textarea{
 }
 .page-info{ color: var(--muted); }
 
-/* responsive */
-@media (max-width: 900px){
-  .products{ grid-template-columns: repeat(2, 1fr); }
+.footer{
+  border-top: 1px solid var(--line);
+  padding: 18px 0;
+  color: var(--muted);
 }
+
+/* ===== Responsive ===== */
+@media (max-width: 900px){
+  .hero-grid{ grid-template-columns: 1fr; }
+  .cards{ grid-template-columns: 1fr; }
+  .products{ grid-template-columns: repeat(2, 1fr); }
+  .menu-btn{ display: inline-flex; }
+
+  .nav{
+    display: none;
+    position: absolute;
+    right: 4%;
+    top: 58px;
+    flex-direction: column;
+    width: min(240px, 92vw);
+    padding: 10px;
+    border-radius: 14px;
+    border: 1px solid var(--line);
+    background: rgba(11,18,32,0.95);
+  }
+  .nav.open{ display: flex; }
+  .nav a{ width: 100%; }
+}
+
 @media (max-width: 420px){
   .products{ grid-template-columns: 1fr; }
 }
