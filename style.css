@@ -270,9 +270,12 @@ input, textarea{
 }
 .p-info{
   padding: 10px 10px 12px;
+  border-top: 1px solid rgba(255,255,255,0.12);
+  background: rgba(0,0,0,0.15);
 }
 .p-name{ font-weight: 700; }
-.p-price{ color: var(--accent); margin-top: 6px; }
+.p-price{ margin-top: 6px; }
+
 
 .pager{
   display: flex;
