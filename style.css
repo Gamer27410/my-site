@@ -299,3 +299,49 @@ backdrop-filter: blur(10px);
 @media (max-width: 420px){
   .products{ grid-template-columns: 1fr; }
 }
+/* ===== CONTACT FORM FIX ===== */
+.form{
+  display: grid;
+  grid-template-columns: 1fr 1fr;   /* PC: 2 ustun */
+  gap: 12px;
+  max-width: 720px;
+  margin-top: 12px;
+}
+
+.form input,
+.form textarea{
+  width: 100%;
+  padding: 12px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,0.03);
+  color: var(--text);
+  outline: none;
+}
+
+.form textarea{
+  grid-column: 1 / -1;            /* textarea butun qator */
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form button{
+  grid-column: 1 / -1;            /* tugma ham butun qator */
+  justify-self: start;            /* chapda turadi */
+}
+
+.hint{
+  grid-column: 1 / -1;
+  margin: 0;
+  min-height: 18px;
+  font-size: 14px;
+  color: var(--accent);
+}
+
+/* Telefon: hammasi 1 ustun */
+@media (max-width: 700px){
+  .form{
+    grid-template-columns: 1fr;
+    max-width: 520px;
+  }
+}
