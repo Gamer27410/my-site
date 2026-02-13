@@ -345,3 +345,24 @@ backdrop-filter: blur(10px);
     max-width: 520px;
   }
 }
+/* ==== CONTACT BACKGROUND: faqat to‘q binafsha ko‘rinsin ==== */
+#contact{
+  background: #0b1220;          /* to‘q binafsha (body rangiga yaqin) */
+  border-top: 1px solid var(--line);
+}
+
+/* Contact ichidagi container ham shaffof bo‘lmasin */
+#contact .container{
+  position: relative;
+  padding-top: 28px;
+  padding-bottom: 34px;
+  background: #0b1220;
+}
+
+/* Formani ham 100% fonli qilamiz (gradient ko‘rinmaydi) */
+#contact .form{
+  background: #0f1930;          /* panel rangi */
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 16px;
+}
