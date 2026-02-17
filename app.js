@@ -5,9 +5,9 @@ const FILES = [
     title: "Rufus 4.12",
     filename: "rufus-4.12.exe",
     path: "files/rufus-4.12.exe",
-    about: "Kompyuter uchun kerakli utilitalar to‘plami. O‘rnatish bo‘yicha qisqa yo‘riqnoma ichida.",
+    about: "Rufus - bu USB flesh-disklarni oson va tez formatlash va bootable qilish uchun mo‘ljallangan bepul vosita. U Windows, Linux va boshqa operatsion tizimlar uchun ISO fayllarini USB drayverlariga yozish imkonini beradi.",
     tags: [".EXE", "Tools"],
-    size: "28 MB",
+    size: "2 MB",
     date: "2026-02-17"
   },
   {
