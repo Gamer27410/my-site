@@ -3,160 +3,59 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Laziz WEB SITE</title>
+  <title>Fayllar Katalogi</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="icon" type="image/png" href="logoheader.png">
-
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-row">
-      <a class="logo" href="#">Shoppinga xush kelibsiz!</a>
+  <!-- Neon animated background -->
+  <div class="bg">
+    <div class="blob b1"></div>
+    <div class="blob b2"></div>
+    <div class="blob b3"></div>
+    <div class="grid"></div>
+  </div>
 
-      <button class="menu-btn" id="menuBtn" aria-label="Menyuni ochish/yopish">
-        ☰
-      </button>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">⬇️</div>
+      <div>
+        <h1>Fayllar Katalogi</h1>
+        <p>Izohni o‘qing, so‘ng yuklab oling.</p>
+      </div>
+    </div>
 
-      <nav class="nav" id="nav">
-        <a href="#home">Bosh sahifa</a>
-        <a href="#about">Biz haqimizda</a>
-        <a href="#services">Xizmatlar</a>
-        <a href="#contact">Aloqa</a>
-      </nav>
+    <div class="controls">
+      <input id="search" type="search" placeholder="Qidirish: nom, izoh, teg..." autocomplete="off" />
+      <select id="sort">
+        <option value="new">Yangi → Eski</option>
+        <option value="old">Eski → Yangi</option>
+        <option value="az">A → Z</option>
+        <option value="za">Z → A</option>
+      </select>
     </div>
   </header>
 
-  <main>
-    <section class="section" id="services">
-  <div class="container">
-    <h2>Xizmatlar</h2>
-
-    <div class="cards">
-      <!-- 1-xizmat -->
-      <button class="card card-btn" id="openProducts">
-        <h3>MAHSULOTLARNI QIDIRISH</h3>
-        <p>Mahsulotlar ro‘yxatini ko‘rish (qidirish + sahifalar).</p>
-      </button>
-
-      <!-- 2-xizmat -->
-      <div class="card">
-        <h3>Yetkazib berish</h3>
-        <p>Keyin qo‘shamiz.</p>
-      </div>
-
-      <!-- 3-xizmat -->
-      <div class="card">
-        <h3>Kafolat / Aloqa</h3>
-        <p>Keyin qo‘shamiz.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-    <section class="section" id="about">
-      <div class="container">
-        <h2>Biz haqimizda</h2>
-        <p>Bu bo‘limga keyin o‘zing xohlagan matnlarni qo‘shamiz.</p>
-      </div>
+  <main class="container">
+    <section class="stats">
+      <div class="pill" id="countPill">0 ta fayl</div>
+      <div class="pill subtle">💡 Fayl qo‘shish: <b>app.js</b> ichidan</div>
     </section>
 
-   
+    <section id="list" class="list"></section>
 
-    <section class="section" id="contact">
-      <div class="container">
-        <h2>Aloqa</h2>
-        <form class="form" id="contactForm">
-          <input type="text" placeholder="Ism" required />
-          <input type="email" placeholder="Email" required />
-          <textarea rows="4" placeholder="Xabar..." required></textarea>
-          <button class="btn primary" type="submit">Yuborish</button>
-          <p class="hint" id="hint"></p>
-        </form>
-      </div>
+    <section class="pager">
+      <button id="prevBtn" class="btn ghost">⬅️ Oldingi</button>
+      <div id="pageInfo" class="pageinfo">1 / 1</div>
+      <button id="nextBtn" class="btn ghost">Keyingi ➡️</button>
     </section>
   </main>
 
   <footer class="footer">
-    <div class="container">
-      <small>© 2026 LAZIZ </small>
-    </div>
+    <span>© <span id="year"></span> — Fayllar katalogi</span>
+    <span class="dot">•</span>
+    <span class="muted">HTML • CSS • JS</span>
   </footer>
 
-  <!-- PRODUCTS MODAL -->
-<div class="modal" id="productsModal" aria-hidden="true">
-  <div class="modal-backdrop" id="closeProducts"></div>
-
-  <div class="modal-card" role="dialog" aria-modal="true">
-    <div class="modal-head">
-      <h3>Mahsulotlar</h3>
-      <button class="icon-btn" id="xClose" aria-label="Yopish">✕</button>
-    </div>
-
-    <div class="modal-tools">
-      <div class="search">
-        <span class="search-icon">🔍</span>
-        <input id="searchInput" type="text" placeholder="Qidirish: nom yoki narx..." />
-      </div>
-    </div>
-
-
-
-
-
-
-
-    <div class="products" id="productsGrid">
-      <!-- ✅ MAHSULOTLARNI SHU YERDAN HTML'DA QO‘SHASAN -->
-      <!-- PAGE 1 (1-10) -->
-      <article class="product" data-name="Quvvatlagich1" data-price="31000">
-        <img src="Images/new.jpg" alt="Quvvatlagich">
-        <div class="p-info">
-          <div class="p-name">Quvvatlagich</div>
-          <div class="p-price">99 000 so‘m</div>
-        </div>
-      </article>
-
-      <article class="product" data-name="Quvvatlagich2" data-price="35000">
-        <img src="Images/new.jpg" alt="Quvvatlagich">
-        <div class="p-info">
-          <div class="p-name">Quvvatlagich</div>
-          <div class="p-price">99 000 so‘m</div>
-        </div>
-      </article>
-
-
-      <article class="product" data-name="Quvvatlagich2" data-price="35000">
-        <img src="Images/new.jpg" alt="Quvvatlagich">
-        <div class="p-info">
-          <div class="p-name">Quvvatlagich</div>
-          <div class="p-price">91 000 so‘m</div>
-        </div>
-      </article>
-
-      <!-- Qolgan 8 tasini ham shu formatda qo‘shib to‘ldirasan (PAGE 1) -->
-
-      <!-- PAGE 2 (11-20) -->
-      <article class="product" data-name="Naushnik" data-price="65000">
-        <img src="Images/new.jpg" alt="Naushnik">
-        <div class="p-info">
-          <div class="p-name">Naushnik</div>
-          <div class="p-price">65 000 so‘m</div>
-        </div>
-      </article>
-
-      <!-- Qolganlarini ham qo‘shib to‘ldirasan (PAGE 2) -->
-    </div>
-
-    <div class="pager">
-      <button class="btn" id="prevPage">⬅ Oldingi</button>
-      <div class="page-info" id="pageInfo">1 / 2</div>
-      <button class="btn" id="nextPage">Keyingi ➡</button>
-    </div>
-  </div>
-</div>
-
-
-  <script src="script.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
