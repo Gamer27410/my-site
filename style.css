@@ -22,20 +22,101 @@ body{
 .bg{position:fixed; inset:0; z-index:-2; overflow:hidden;}
 .blob{
   position:absolute;
-  width:540px; height:540px;
-  filter: blur(42px);
+  width:480px;
+  height:480px;
+  filter: blur(45px);
   opacity:.55;
-  border-radius:999px;
+  border-radius:50%;
   mix-blend-mode: screen;
-  animation: float 12s ease-in-out infinite;
+
+  animation: floatX 6s linear infinite;
+  will-change: transform;
 }
-.b1{left:-120px; top:-140px; background: radial-gradient(circle at 30% 30%, #00f5ff, transparent 60%);}
-.b2{right:-160px; top:120px; background: radial-gradient(circle at 30% 30%, #ff00d4, transparent 60%); animation-duration: 15s;}
-.b3{left:20%; bottom:-220px; background: radial-gradient(circle at 30% 30%, #7c3cff, transparent 60%); animation-duration: 18s;}
-@keyframes float{
-  0%,100%{transform: translate(0,0) scale(1)}
-  50%{transform: translate(40px,-30px) scale(1.06)}
+
+/* HAR BIRINING JOYLASHUVI + RANGI */
+
+.b1{
+  left:-120px; top:-120px;
+  background: radial-gradient(circle,
+    rgba(80,200,255,.9),
+    transparent 65%);
 }
+
+.b2{
+  right:-140px; top:10%;
+  background: radial-gradient(circle,
+    rgba(255,120,210,.9),
+    transparent 65%);
+  animation-duration: 7s;
+}
+
+.b3{
+  left:20%; bottom:-200px;
+  background: radial-gradient(circle,
+    rgba(160,120,255,.9),
+    transparent 65%);
+  animation-duration: 8s;
+}
+
+.b4{
+  right:15%; bottom:-160px;
+  background: radial-gradient(circle,
+    rgba(120,255,210,.85),
+    transparent 65%);
+  animation-duration: 6.5s;
+}
+
+.b5{
+  left:45%; top:-180px;
+  background: radial-gradient(circle,
+    rgba(255,180,120,.85),
+    transparent 65%);
+  animation-duration: 9s;
+}
+
+.b6{
+  right:-200px; bottom:25%;
+  background: radial-gradient(circle,
+    rgba(120,140,255,.9),
+    transparent 65%);
+  animation-duration: 7.5s;
+}
+
+.b7{
+  left:5%; top:40%;
+  background: radial-gradient(circle,
+    rgba(220,120,255,.9),
+    transparent 65%);
+  animation-duration: 10s;
+}
+
+/* HARAKAT YO‘NALISHI */
+@keyframes floatX{
+
+  0%{
+    transform: translate(0,0) scale(1);
+  }
+
+  25%{
+    transform: translate(180px,-120px) scale(1.1);
+  }
+
+  50%{
+    transform: translate(-140px,160px) scale(1.15);
+  }
+
+  75%{
+    transform: translate(200px,100px) scale(1.05);
+  }
+
+  100%{
+    transform: translate(0,0) scale(1);
+  }
+
+}
+
+
+
 .grid{
   position:absolute; inset:-2px;
   background:
