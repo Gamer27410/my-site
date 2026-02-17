@@ -32,21 +32,21 @@ const FILES = [
 const SITES = [
 
 {
-  title: "Rufus Official",
-  url: "https://rufus.ie",
-  about: "USB fleshka orqali Windows o‘rnatish uchun rasmiy sayt."
+  title: "KIMI",
+  url: "https://www.kimi.com/",
+  about: "KIMI - bu chiroyli va oson taqdimoq qilish imkonini beruvchi onlayn taqdimot yaratish platformasi. (BEPUL)"
 },
 
 {
-  title: "Python.org",
-  url: "https://www.python.org",
-  about: "Python dasturlash tilining rasmiy sayti."
+  title: "Claude",
+  url: "https://claude.a",
+  about: "Claude - bu AI yordamida eng yaxshi kod yozish va muammolarni hal qilish uchun mo‘ljallangan vosita."
 },
 
 {
-  title: "GitHub",
-  url: "https://github.com",
-  about: "Dasturlarni saqlash va loyiha joylash platformasi."
+  title: "GROK AI",
+  url: "https://grok.com/",
+  about: "GROK AI - bu rasmni video qilib berish imkoniga ega bo‘lgan sun’iy intellektga asoslangan vosita. Rasmni yuklang,promt bering va GROK AI usizga video yaratib beradi."
 }
 
 ];
