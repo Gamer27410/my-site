@@ -39,7 +39,7 @@ const SITES = [
 
 {
   title: "Claude",
-  url: "https://claude.ai",
+  url: "https://claude.ai/new",
   about: "Claude - bu AI yordamida eng yaxshi kod yozish va muammolarni hal qilish uchun mo‘ljallangan vosita."
 },
 
