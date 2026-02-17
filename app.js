@@ -29,6 +29,27 @@ const FILES = [
     date: "2026-01-28"
   }
 ];
+const SITES = [
+
+{
+  title: "Rufus Official",
+  url: "https://rufus.ie",
+  about: "USB fleshka orqali Windows o‘rnatish uchun rasmiy sayt."
+},
+
+{
+  title: "Python.org",
+  url: "https://www.python.org",
+  about: "Python dasturlash tilining rasmiy sayti."
+},
+
+{
+  title: "GitHub",
+  url: "https://github.com",
+  about: "Dasturlarni saqlash va loyiha joylash platformasi."
+}
+
+];
 
 // ====== 2) UI LOGIC ======
 const listEl = document.getElementById("list");
@@ -157,3 +178,36 @@ prevBtn.addEventListener("click", () => { page -= 1; render(); });
 nextBtn.addEventListener("click", () => { page += 1; render(); });
 
 render();
+const linksEl = document.getElementById("links");
+
+function renderSites(){
+
+  linksEl.innerHTML = SITES.map(site => `
+
+    <article class="card">
+
+      <h3>${site.title}</h3>
+
+      <p class="desc">${site.about}</p>
+
+      <div class="actions">
+
+        <a class="btn primary"
+           href="${site.url}"
+           target="_blank">
+
+          🌐 Saytga o‘tish
+
+        </a>
+
+        <span class="small">${site.url}</span>
+
+      </div>
+
+    </article>
+
+  `).join("");
+
+}
+
+renderSites();
